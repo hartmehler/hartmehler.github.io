@@ -3,26 +3,211 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Engineering projects by Hartis Mehler: race vehicle design, computational physics, and software.">
   <title>Hartis Mehler | Engineering Portfolio</title>
   <style>
-    body { max-width: 900px; margin: 80px auto; padding: 0 24px;
-           font: 18px/1.6 system-ui, sans-serif; color: #172525;
-           background: #f6f4ef; }
-    h1 { font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.05; }
-    a { color: #165f50; }
+    :root {
+      --background: #101b1b;
+      --surface: #1b2a29;
+      --text: #f4f1e9;
+      --muted: #b8c4bf;
+      --accent: #d9e88b;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+
+    header {
+      border-bottom: 1px solid #34423f;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+    .name { font-weight: 750; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .nav-links a { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover, a:hover { color: var(--accent); }
+
+    .hero { padding: 84px 0 68px; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 16px 0 22px;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+    .intro {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+    .hero-link {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 19px;
+      border: 1px solid var(--accent);
+      border-radius: 5px;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    section { padding: 36px 0 75px; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; }
+    .section-note { max-width: 680px; color: var(--muted); }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      overflow: hidden;
+      margin-top: 30px;
+      border: 1px solid #34423f;
+      border-radius: 12px;
+      background: var(--surface);
+    }
+    .feature img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .feature-copy { padding: clamp(26px, 4vw, 50px); }
+    .feature-copy h3 { margin: 8px 0 16px; font-size: 2rem; line-height: 1.15; }
+    .feature-copy p { color: var(--muted); }
+    .tags { color: var(--accent) !important; font-size: .9rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .card {
+      padding: 30px;
+      border: 1px solid #34423f;
+      border-radius: 12px;
+      background: var(--surface);
+    }
+    .card h3 { margin-top: 0; font-size: 1.4rem; }
+    .card p { margin-bottom: 0; color: var(--muted); }
+
+    footer {
+      padding: 35px 0 55px;
+      border-top: 1px solid #34423f;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 750px) {
+      .hero { padding-top: 60px; }
+      .feature, .grid { grid-template-columns: 1fr; }
+      .feature img { min-height: 260px; max-height: 380px; }
+    }
   </style>
 </head>
 <body>
-  <p>ENGINEERING PORTFOLIO</p>
-  <h1>Hartis Mehler</h1>
-  <p>Physics graduate building and testing physical systems, computational models,
-     and useful software.</p>
-  <h2>Selected projects</h2>
-  <ul>
-    <li>Design and build of a 4600-class Ultra4 race truck</li>
-    <li>Computational physics projects</li>
-    <li>Stone's Costing Studio</li>
-  </ul>
-  <p><a href="https://github.com/hartmehler">GitHub</a></p>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="name" href="/">Hartis Mehler</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/hartmehler">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <p class="eyebrow">Physics · Engineering · Software</p>
+      <h1>I like building things that have to work in the real world.</h1>
+      <p class="intro">
+        I'm Hartis Mehler, a physics graduate with an engineering concentration.
+        My work spans race vehicle design and fabrication, computational physics,
+        and software built to solve practical problems.
+      </p>
+      <a class="hero-link" href="#projects">Explore my projects ↓</a>
+    </div>
+
+    <section class="wrap" id="projects">
+      <p class="eyebrow">Selected work</p>
+      <h2>Projects</h2>
+      <p class="section-note">
+        Design work, physical builds, simulations, and software—with the process
+        and evidence behind each one.
+      </p>
+
+      <article class="feature">
+        <img src="assets/truck-hero.jpg"
+             alt="Hartis Mehler's completed 4600-class Ultra4 race truck">
+        <div class="feature-copy">
+          <p class="eyebrow">Featured project</p>
+          <h3>Designing and building an Ultra4 race truck</h3>
+          <p>
+            I led a team building a 4600-class truck from a 1999 Toyota 4Runner.
+            The project brought together roll-cage CAD and analysis, fabrication,
+            suspension, vehicle systems, fundraising, and race testing.
+          </p>
+          <p class="tags">Autodesk Inventor · Structural analysis · Fabrication · Testing</p>
+          <p>Full build story and project images coming next.</p>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Computational physics</h3>
+          <p>
+            Jupyter notebooks exploring an Ising model, electrostatics, and
+            double-pendulum dynamics. I'll show the methods, plots, and what
+            each model can—and cannot—tell us.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Stone's Costing Studio</h3>
+          <p>
+            A desktop application for managing pastry recipes, ingredient costs,
+            customers, and orders. Built with Python, PySide6, SQLAlchemy,
+            and SQLite.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="about">
+      <p class="eyebrow">About</p>
+      <h2>Curious from the model to the machine.</h2>
+      <p class="section-note">
+        I enjoy learning a system deeply, working with my hands, and testing
+        whether an idea holds up outside a classroom or a computer screen.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      See the work on <a href="https://github.com/hartmehler">GitHub</a>.
+    </div>
+  </footer>
 </body>
 </html>
