@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The design, build, testing, and lessons from Hartis Mehler's Ultra4 race truck project.">
+  <title>Ultra4 Race Truck | Hartis Mehler</title>
+  <style>
+    :root {
+      --background: #101b1b;
+      --surface: #1b2a29;
+      --text: #f4f1e9;
+      --muted: #b8c4bf;
+      --accent: #d9e88b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, sans-serif;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(1000px, calc(100% - 40px)); margin: auto; }
+    header { border-bottom: 1px solid #34423f; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+    nav a { text-decoration: none; }
+    .name { color: var(--text); font-weight: 750; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 16px 0 24px;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      letter-spacing: -.035em;
+    }
+    .lead { max-width: 750px; color: var(--muted); font-size: 1.2rem; }
+    .intro { padding: 75px 0 45px; }
+    .hero-image {
+      display: block;
+      width: 100%;
+      max-height: 590px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    section { padding: 65px 0; border-bottom: 1px solid #34423f; }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: clamp(25px, 6vw, 90px);
+    }
+    p { margin-top: 0; }
+    .split > figure {
+        grid-column: 1 / -1;
+    }
+    .fabrication-photo {
+        grid-column: 1 / -1;
+        width: min(100%, 460px);
+        margin: 30px auto 0;
+    }
+        .fabrication-photo img {
+        width: 100%;
+        height: auto;
+        max-height: 680px;
+        object-fit: contain;
+    }
+    .muted { color: var(--muted); }
+    figure { margin: 28px 0 0; }
+    figure img {
+      display: block;
+      width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    figcaption { padding-top: 10px; color: var(--muted); font-size: .9rem; }
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 30px;
+    }
+    .gallery figure { margin: 0; }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        object-fit: contain;
+    }
+    .callout {
+      padding: 28px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: var(--surface);
+    }
+    footer { padding: 45px 0 70px; }
+    @media (max-width: 700px) {
+      .intro { padding-top: 55px; }
+      .split, .gallery { grid-template-columns: 1fr; }
+      .gallery img { height: auto; max-height: 450px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="name" href="../index.html">Hartis Mehler</a>
+      <a href="../index.html#projects">← All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap intro">
+      <p class="eyebrow">Vehicle design · Fabrication · Testing</p>
+      <h1>Building an Ultra4 race truck from a 1999 4Runner.</h1>
+      <p class="lead">
+        I led a team through the design, build, and race testing of a
+        4600-class truck. The work brought engineering analysis into the shop
+        and put our decisions to a real test on the course.
+      </p>
+    </div>
+
+    <div class="wrap">
+      <img class="hero-image" src="../assets/truck-hero.jpg"
+           alt="Completed 4600-class Ultra4 race truck">
+    </div>
+
+    <section class="wrap split">
+      <div>
+        <p class="eyebrow">01 / The challenge</p>
+        <h2>Turn a production vehicle into a race-ready system.</h2>
+      </div>
+      <div>
+        <p>
+          We started with a 1999 Toyota 4Runner and a goal: build a
+          4600-class truck for the Yellowstone Offroad Racing Series.
+          As project lead and driver, I coordinated design, sourcing,
+          fabrication, assembly, fundraising, and testing with our team.
+        </p>
+        <p class="muted">
+          Every change had to work with the others. Cage geometry affected
+          packaging; suspension changes affected loads and clearance; moving
+          the fuel system created new integration and safety requirements.
+        </p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <p class="eyebrow">02 / Design and analysis</p>
+      <h2>Model it, check it, then build it.</h2>
+      <p class="lead">
+        I developed the cage design in Autodesk Inventor using dimension-driven
+        drafting and frame members. Frame analysis and a Python estimate of
+        rollover forces helped us examine the loads and possible displacement
+        before fabrication. These were design tools, not a substitute for
+        physical testing.
+      </p>
+      <div class="gallery">
+        <figure>
+          <img src="../assets/truck/cage-cad.png"
+               alt="Autodesk Inventor model of the truck's roll cage" loading="lazy">
+          <figcaption>Roll-cage model developed in Inventor.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/truck/frame-analysis.png"
+               alt="Inventor structural analysis of the roll cage" loading="lazy">
+          <figcaption>Frame analysis used to examine the modeled loads.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap split">
+      <div>
+        <p class="eyebrow">03 / The build</p>
+        <h2>Make the systems work together.</h2>
+      </div>
+      <div>
+        <p>
+          The team fabricated the cage and integrated changes to the front
+          suspension, rear three-link suspension, shocks, differentials,
+          wiring, and fuel system. The fuel cell was relocated to make
+          room for the rear suspension links.
+        </p>
+        <p class="muted">
+          The project also meant managing a roughly $28,000 parts and
+          expenses budget, developing sponsorship proposals, and coordinating
+          support from suppliers and teammates.
+        </p>
+      </div>
+      <figure class="fabrication-photo">
+        <img src="../assets/truck/fabrication.jpg"
+             alt="Roll-cage fabrication in progress" loading="lazy">
+        <figcaption>From the Inventor model to the physical build.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap">
+      <p class="eyebrow">04 / The real test</p>
+      <h2>Race day revealed what the model could not.</h2>
+      <p class="lead">
+        At the Big Sky 200, the truck completed four passes and was running
+        first in class. At mile 28, a rear lower shock eye failed during a
+        turn, leading to a rollover and an oil-fed fire. The cage and safety
+        equipment protected the occupants from serious injury.
+      </p>
+      <figure>
+        <img src="../assets/truck/race-day.jpg"
+             alt="The Ultra4 truck and team at the Big Sky 200" loading="lazy">
+        <figcaption>Race testing at the Big Sky 200.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap">
+      <p class="eyebrow">05 / What came next</p>
+      <h2>Document the failure. Improve the design.</h2>
+      <div class="callout">
+        <p>
+          We traced the rollover to the failed shock eye and identified
+          changes to better protect that mounting point. The proposed
+          next iteration included a trailing-arm rear setup, revised
+          breather routing, and an engine cage tied into the roll cage.
+        </p>
+        <p class="muted" style="margin-bottom:0">
+          This was a team project. I served as project lead and driver,
+          with fabrication, assembly, mechanics, and race support from
+          the teammates and sponsors credited in the capstone presentation.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <a href="../index.html#projects">← Back to all projects</a>
+  </footer>
+</body>
+</html>
