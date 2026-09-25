@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hartis Mehler's 2024 course presentation on U.S. electricity demand, generation, and transmission.">
+  <title>Energy Management Research | Hartis Mehler</title>
+  <style>
+    :root { --bg:#101b1b; --surface:#1b2a29; --text:#f4f1e9; --muted:#b8c4bf; --accent:#d9e88b; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 system-ui,-apple-system,sans-serif; }
+    a { color:var(--accent); }
+    .wrap { width:min(1000px,calc(100% - 40px)); margin:auto; }
+    header, section { border-bottom:1px solid #34423f; }
+    nav { display:flex; justify-content:space-between; gap:20px; padding:18px 0; }
+    nav a { text-decoration:none; }
+    .name { color:var(--text); font-weight:750; }
+    .eyebrow { color:var(--accent); font-size:.8rem; font-weight:750; letter-spacing:.16em; text-transform:uppercase; }
+    .intro { padding:75px 0 50px; }
+    h1 { max-width:900px; margin:16px 0 24px; font-size:clamp(3rem,8vw,6rem); line-height:1.04; letter-spacing:-.055em; }
+    h2 { margin-top:0; font-size:clamp(1.8rem,4vw,2.7rem); line-height:1.2; letter-spacing:-.035em; }
+    p { max-width:760px; }
+    .lead { color:var(--muted); font-size:1.2rem; }
+    section { padding:60px 0; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:25px; }
+    .grid article { padding:25px; border:1px solid #34423f; border-radius:10px; background:var(--surface); }
+    .grid h3 { margin:0 0 12px; color:var(--accent); }
+    .grid p { margin:0; color:var(--muted); }
+    .callout { padding:26px; border-left:3px solid var(--accent); background:var(--surface); }
+    .button { display:inline-block; margin-top:12px; padding:12px 18px; border:1px solid var(--accent); border-radius:5px; font-weight:700; text-decoration:none; }
+    footer { padding:45px 0 70px; }
+    @media (max-width:700px) { .intro { padding-top:55px; } .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header><nav class="wrap"><a class="name" href="../index.html">Hartis Mehler</a><a href="../index.html#projects">← All projects</a></nav></header>
+  <main>
+    <div class="wrap intro">
+      <p class="eyebrow">Energy systems · Course research · 2024</p>
+      <h1>How does growing electricity demand affect the grid?</h1>
+      <p class="lead">For a university presentation, I researched how changes in electricity use relate to generation locations and the transmission infrastructure needed to deliver power.</p>
+    </div>
+    <section class="wrap">
+      <p class="eyebrow">01 / The questions</p>
+      <h2>Power systems have to work end to end.</h2>
+      <div class="grid">
+        <article><h3>Demand</h3><p>How might electricity use change across homes, business, industry, and transportation?</p></article>
+        <article><h3>Generation</h3><p>How do resource locations and existing supply affect where power can be produced?</p></article>
+        <article><h3>Transmission</h3><p>What infrastructure connects generation to the places that need electricity?</p></article>
+      </div>
+    </section>
+    <section class="wrap">
+      <p class="eyebrow">02 / My approach</p>
+      <h2>Synthesize several views of the system.</h2>
+      <p>I organized published projections, maps, and infrastructure figures into a presentation that moves from changing demand to supply geography and transmission constraints. This was research and technical communication, rather than an original power-grid simulation.</p>
+      <a class="button" href="../assets/energy/energy-presentation-2024.pdf">View my original presentation (PDF) →</a>
+    </section>
+    <section class="wrap">
+      <p class="eyebrow">03 / Context</p>
+      <h2>A snapshot of coursework completed in 2024.</h2>
+      <div class="callout"><p style="margin-bottom:0">The presentation is an archive of what I researched and presented in 2024. Its projections and outside figures should be read in that historical context; they are not current forecasts or original grid measurements.</p></div>
+    </section>
+  </main>
+  <footer class="wrap"><a href="../index.html#projects">← Back to all projects</a></footer>
+</body>
+</html>

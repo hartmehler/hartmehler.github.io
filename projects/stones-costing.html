@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stone's Costing Studio, a Python desktop app by Hartis Mehler for pastry recipes, ingredient costs, and orders.">
+  <title>Stone's Costing Studio | Hartis Mehler</title>
+  <style>
+    :root { --bg:#101b1b; --surface:#1b2a29; --text:#f4f1e9; --muted:#b8c4bf; --accent:#d9e88b; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 system-ui,-apple-system,sans-serif; }
+    a { color:var(--accent); }
+    .wrap { width:min(1000px,calc(100% - 40px)); margin:auto; }
+    header, section { border-bottom:1px solid #34423f; }
+    nav { display:flex; justify-content:space-between; gap:20px; padding:18px 0; }
+    nav a { text-decoration:none; }
+    .name { color:var(--text); font-weight:750; }
+    .eyebrow { color:var(--accent); font-size:.8rem; font-weight:750; letter-spacing:.16em; text-transform:uppercase; }
+    .intro { padding:75px 0 50px; }
+    h1 { max-width:900px; margin:16px 0 24px; font-size:clamp(3rem,8vw,6rem); line-height:1.04; letter-spacing:-.055em; }
+    h2 { margin-top:0; font-size:clamp(1.8rem,4vw,2.7rem); line-height:1.2; letter-spacing:-.035em; }
+    p { max-width:760px; }
+    .lead { color:var(--muted); font-size:1.2rem; }
+    .muted, figcaption { color:var(--muted); }
+    section { padding:60px 0; }
+    figure { margin:28px 0 0; }
+    figure img { display:block; width:100%; height:auto; border-radius:8px; background:#f8f4ed; }
+    figcaption { padding-top:10px; font-size:.95rem; }
+    .callout { padding:26px; border-left:3px solid var(--accent); background:var(--surface); }
+    footer { padding:45px 0 70px; }
+    @media (max-width:700px) { .intro { padding-top:55px; } }
+  </style>
+</head>
+<body>
+  <header><nav class="wrap"><a class="name" href="../index.html">Hartis Mehler</a><a href="../index.html#projects">← All projects</a></nav></header>
+  <main>
+    <div class="wrap intro">
+      <p class="eyebrow">Python · Desktop software · Pastry operations</p>
+      <h1>Stone's Costing Studio.</h1>
+      <p class="lead">I built a desktop application to bring recipes, ingredients, vendor costs, and customer orders into one workflow for a pastry business.</p>
+    </div>
+    <section class="wrap">
+      <p class="eyebrow">01 / The problem</p>
+      <h2>Pricing starts before an order arrives.</h2>
+      <p>A product's cost depends on how a recipe's ingredients match the items a business actually buys, their pack sizes, and the quantities used. I designed the application to connect that information to an order and its selling price.</p>
+      <p class="muted">The workflow moves from recipe intake to standardized ingredients, vendor purchase records, and item-level order costing.</p>
+    </section>
+    <section class="wrap">
+      <p class="eyebrow">02 / Recipes</p>
+      <h2>Bring production recipes into one library.</h2>
+      <p>The recipe library supports importing, reviewing, and matching recipe ingredients to the ingredient database.</p>
+      <figure><img src="../assets/stones/recipes-demo.png" alt="Stone's Costing Studio recipe-library illustration with sample entries" loading="lazy"><figcaption>Illustrative mockup of the app interface with fictional sample recipes. The additional records were added to the image for this portfolio.</figcaption></figure>
+    </section>
+    <section class="wrap">
+      <p class="eyebrow">03 / Ingredients</p>
+      <h2>Keep names and units consistent.</h2>
+      <p>The ingredient database organizes canonical names, categories, units, aliases, and vendor purchase options so recipes can be connected to purchasing records.</p>
+      <figure><img src="../assets/stones/ingredients-screen.png" alt="Unedited ingredient database screen in Stone's Costing Studio" loading="lazy"><figcaption>Unedited screenshot of the ingredient database interface.</figcaption></figure>
+    </section>
+    <section class="wrap">
+      <p class="eyebrow">04 / Orders</p>
+      <h2>Turn costing into a quote.</h2>
+      <p>Orders combine items, quantities, selling prices, calculated costs, margins, and fulfillment details in one view.</p>
+      <figure><img src="../assets/stones/order-demo.png" alt="Stone's Costing Studio order-screen illustration with a fictional customer" loading="lazy"><figcaption>Illustrative mockup with a fictional customer, order, prices, and margins. No real customer or transaction appears in this image.</figcaption></figure>
+    </section>
+    <section class="wrap">
+      <p class="eyebrow">05 / Implementation</p>
+      <h2>Built as a desktop application.</h2>
+      <div class="callout"><p>I developed the app in Python, using PySide6 for its interface and SQLAlchemy with SQLite for stored data. Spreadsheet tools support recipe and data workflows.</p><p class="muted" style="margin-bottom:0">The project made me design the interface and the relationships between recipes, ingredients, vendors, customers, and orders together.</p></div>
+    </section>
+  </main>
+  <footer class="wrap"><a href="../index.html#projects">← Back to all projects</a></footer>
+</body>
+</html>
