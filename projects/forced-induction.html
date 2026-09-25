@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The design, build, testing, and lessons from Hartis Mehler's Ultra4 race truck project.">
+  <title>Forced Induction Research | Hartis Mehler</title>
+  <style>
+    :root {
+      --background: #101b1b;
+      --surface: #1b2a29;
+      --text: #f4f1e9;
+      --muted: #b8c4bf;
+      --accent: #d9e88b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, sans-serif;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(1000px, calc(100% - 40px)); margin: auto; }
+    header { border-bottom: 1px solid #34423f; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+    nav a { text-decoration: none; }
+    .name { color: var(--text); font-weight: 750; }
+    .eyebrow {
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 16px 0 24px;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      letter-spacing: -.035em;
+    }
+    .lead { max-width: 750px; color: var(--muted); font-size: 1.2rem; }
+    .intro { padding: 75px 0 45px; }
+    .hero-image {
+      display: block;
+      width: 100%;
+      max-height: 590px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    section { padding: 65px 0; border-bottom: 1px solid #34423f; }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: clamp(25px, 6vw, 90px);
+    }
+    p { margin-top: 0; }
+    .split > figure {
+        grid-column: 1 / -1;
+    }
+    .fabrication-photo {
+        grid-column: 1 / -1;
+        width: min(100%, 460px);
+        margin: 30px auto 0;
+    }
+        .fabrication-photo img {
+        width: 100%;
+        height: auto;
+        max-height: 680px;
+        object-fit: contain;
+    }
+    .muted { color: var(--muted); }
+    figure { margin: 28px 0 0; }
+    figure img {
+      display: block;
+      width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    figcaption { padding-top: 10px; color: var(--muted); font-size: .9rem; }
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 30px;
+    }
+    .gallery figure { margin: 0; }
+    .gallery img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        object-fit: contain;
+    }
+    .callout {
+      padding: 28px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: var(--surface);
+    }
+    footer { padding: 45px 0 70px; }
+    @media (max-width: 700px) {
+      .intro { padding-top: 55px; }
+      .split, .gallery { grid-template-columns: 1fr; }
+      .gallery img { height: auto; max-height: 450px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="name" href="../index.html">Hartis Mehler</a>
+      <a href="../index.html#projects">← All projects</a>
+    </nav>
+  </header>
+
+  <main>
+  <div class="wrap intro">
+    <p class="eyebrow">Automotive engineering · Literature review · 2025</p>
+    <h1>Comparing ways to get more air into an engine.</h1>
+    <p class="lead">
+      I researched turbochargers, superchargers, and electrically assisted
+      systems, then presented the engineering tradeoffs in a paper and poster.
+    </p>
+  </div>
+
+  <section class="wrap">
+    <p class="eyebrow">01 / The question</p>
+    <h2>Which forced-induction approach fits the application?</h2>
+    <p>
+      Compressing intake air can change an engine's power delivery and allow
+      different engine-packaging choices. The useful question is how a system
+      behaves under the operating conditions that matter for a particular
+      vehicle.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">02 / What I compared</p>
+    <h2>Response, efficiency, and mechanical complexity.</h2>
+    <p>
+      My review compared exhaust-driven turbocharging, crankshaft-driven
+      supercharging, multi-stage arrangements, and electrically assisted
+      concepts. I examined published discussions of response time, compressor
+      efficiency, packaging, rotating components, and application-dependent
+      tradeoffs.
+    </p>
+    <p>
+      This was a synthesis of existing research. I did not build or test these
+      induction systems as part of the paper.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">03 / The work</p>
+    <h2>Paper and research poster.</h2>
+    <p>
+      The paper contains the full discussion and references. The poster
+      condenses the comparison for presentation.
+    </p>
+    <figure>
+      <a href="../assets/forced-induction/poster.pdf">
+        <img src="../assets/forced-induction/poster-preview.png"
+             alt="Preview of Hartis Mehler's forced-induction research poster"
+             style="width:100%; height:auto; max-height:none; object-fit:contain"
+             loading="lazy">
+      </a>
+      <figcaption>Poster preview. Select it to open the full-size PDF.</figcaption>
+    </figure>
+    <p style="margin-top:28px">
+      <a href="../assets/forced-induction/paper.pdf">Read the paper (PDF) →</a>
+      &nbsp;&nbsp;
+      <a href="../assets/forced-induction/poster.pdf">View the poster (PDF) →</a>
+    </p>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">04 / Context</p>
+    <div class="callout">
+      <p style="margin-bottom:0">
+        These PDFs are the coursework versions submitted in 2025. Their
+        technical claims reflect the scope and sources of that assignment;
+        the page above summarizes the comparison without treating a single
+        system as universally best.
+      </p>
+    </div>
+  </section>
+</main>
+
+  <footer class="wrap">
+    <a href="../index.html#projects">← Back to all projects</a>
+  </footer>
+</body>
+</html>
