@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hartis Mehler's two-dimensional Ising model simulation.">
+  <title>Ising Model | Hartis Mehler</title>
+  <style>
+    :root {
+      --bg: #101b1b; --surface: #1b2a29;
+      --text: #f4f1e9; --muted: #b8c4bf; --accent: #d9e88b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, sans-serif;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(1000px, calc(100% - 40px)); margin: auto; }
+    header, section { border-bottom: 1px solid #34423f; }
+    nav { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; }
+    nav a { text-decoration: none; }
+    .name { color: var(--text); font-weight: 750; }
+    .eyebrow {
+      color: var(--accent); font-size: .8rem; font-weight: 750;
+      letter-spacing: .16em; text-transform: uppercase;
+    }
+    .intro { padding: 75px 0 50px; }
+    h1 {
+      max-width: 900px; margin: 16px 0 24px;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.04; letter-spacing: -.055em;
+    }
+    h2 { margin-top: 0; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.2; }
+    p { max-width: 760px; }
+    .lead { color: var(--muted); font-size: 1.2rem; }
+    section { padding: 65px 0; }
+    .chart {
+      display: block; max-width: 100%; height: auto;
+      margin: 30px 0 10px; border-radius: 8px;
+      background: white;
+    }
+    .simulations {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px; margin-top: 30px;
+    }
+    figure { margin: 0; }
+    .simulation {
+      padding: 20px; border: 1px solid #34423f;
+      border-radius: 10px; background: var(--surface);
+    }
+    .simulation img {
+      display: block; width: 100%; aspect-ratio: 1;
+      object-fit: contain; image-rendering: pixelated;
+    }
+    figcaption { padding-top: 12px; color: var(--muted); font-size: .95rem; }
+    .note {
+      padding: 24px; border-left: 3px solid var(--accent);
+      background: var(--surface);
+    }
+    footer { padding: 45px 0 70px; }
+    @media (max-width: 700px) {
+      .intro { padding-top: 55px; }
+      .simulations { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="name" href="../index.html">Hartis Mehler</a>
+      <a href="../index.html#projects">← All projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap intro">
+      <p class="eyebrow">Computational physics · Python · Monte Carlo</p>
+      <h1>Watching order emerge from random spins.</h1>
+      <p class="lead">
+        I programmed a two-dimensional Ising model to explore how temperature
+        changes the behavior of interacting spins. The simulation turns a
+        simple local rule into visible, system-wide behavior.
+      </p>
+    </div>
+
+    <section class="wrap">
+      <p class="eyebrow">01 / The model</p>
+      <h2>A grid of simple interactions.</h2>
+      <p>
+        Each site on a square lattice has a spin of +1 or −1. Neighboring
+        spins affect the system's energy, and periodic boundaries connect
+        opposite edges of the grid. I used the Metropolis algorithm to
+        propose individual spin flips: a flip that lowers energy is accepted,
+        while an energy-increasing flip may still be accepted depending
+        on temperature.
+      </p>
+    </section>
+
+    <section class="wrap">
+      <p class="eyebrow">02 / What the simulation shows</p>
+      <h2>Low temperature and high temperature look different.</h2>
+      <p>
+        These animations use a 40 × 40 lattice. Each square represents one
+        spin. At the lower temperature, larger regions of aligned spins
+        persist. At the higher temperature, thermal fluctuations continually
+        disrupt that order.
+      </p>
+      <div class="simulations">
+        <figure class="simulation">
+          <img src="../assets/ising/temperature-2.gif"
+               alt="Animated Ising lattice at temperature 2" loading="lazy">
+          <figcaption>Temperature 2: larger regions of aligned spins.</figcaption>
+        </figure>
+        <figure class="simulation">
+          <img src="../assets/ising/temperature-100.gif"
+               alt="Animated Ising lattice at temperature 100" loading="lazy">
+          <figcaption>Temperature 100: rapidly changing, disordered spins.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <p class="eyebrow">03 / Measuring the change</p>
+      <h2>Average energy rises with temperature.</h2>
+      <p>
+        I also ran temperature sweeps on a 20 × 20 lattice. After allowing
+        the model to settle at each temperature, I measured energy over
+        repeated Monte Carlo sweeps. At low temperature, aligned neighbors
+        produce an energy near the ordered-state limit. As temperature rises,
+        the average energy moves toward zero.
+      </p>
+      <figure>
+        <img class="chart" src="../assets/ising/energy.png"
+             alt="Average energy versus temperature from the Ising simulation"
+             loading="lazy">
+        <figcaption>Average energy from the 20 × 20 lattice temperature sweep.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap">
+      <p class="eyebrow">04 / What I learned</p>
+      <h2>Local rules can produce collective behavior.</h2>
+      <div class="note">
+        The interesting part was implementing a physically meaningful update
+        rule, handling neighbors across the grid boundaries, and separating
+        settling time from measurement. The plots and animations let me
+        inspect the same model in two different ways.
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <a href="../index.html#projects">← Back to all projects</a>
+  </footer>
+</body>
+</html>
